@@ -1,0 +1,34 @@
+public class FaturamentoDistribuidora {
+    public static void main(String[] args) {
+       
+        double sp = 67836.43;
+        double rj = 36678.66;
+        double mg = 29229.88;
+        double es = 27165.48;
+        double outros = 19849.53;
+
+        double total = sp + rj + mg + es + outros;
+
+        double percSP = (sp / total) * 100;
+        double percRJ = (rj / total) * 100;
+        double percMG = (mg / total) * 100;
+        double percES = (es / total) * 100;
+        double percOutros = (outros / total) * 100;
+
+        // Formatação dos valores percentuais com duas casas decimais
+        DecimalFormat df = new DecimalFormat("#.##");
+        String percSPFormatado = df.format(percSP);
+        String percRJFormatado = df.format(percRJ);
+        String percMGFormatado = df.format(percMG);
+        String percESFormatado = df.format(percES);
+        String percOutrosFormatado = df.format(percOutros);
+
+        System.out.println("Percentual de representação do faturamento mensal por estado:");
+        System.out.println("SP: " + percSPFormatado + "%");
+        System.out.println("RJ: " + percRJFormatado + "%");
+        System.out.println("MG: " + percMGFormatado + "%");
+        System.out.println("ES: " + percESFormatado + "%");
+        System.out.println("Outros: " + percOutrosFormatado + "%");
+        System.out.println("Total: 100%");
+    }
+}
