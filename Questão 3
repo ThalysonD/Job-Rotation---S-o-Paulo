@@ -1,0 +1,44 @@
+import java.util.Arrays;
+
+public class FaturamentoDistribuidora {
+    public static void main(String[] args) {
+        
+        // Não possuo conhecimento em json ou xml, mas estou disposto a aprender. Deixo aqui o código sem esse uso
+        
+        double[] faturamento = {0, 0, 1000.5, 2000.0, 1500.75, 0, 0, 800.25, 1200.0, 1800.5, 900.75, 0, 0};
+
+        double menorFaturamento = Double.MAX_VALUE;
+        for (double valor : faturamento) {
+            if (valor > 0 && valor < menorFaturamento) {
+                menorFaturamento = valor;
+            }
+        }
+        System.out.println("Menor faturamento: R$" + menorFaturamento);
+
+        double maiorFaturamento = 0;
+        for (double valor : faturamento) {
+            if (valor > maiorFaturamento) {
+                maiorFaturamento = valor;
+            }
+        }
+        System.out.println("Maior faturamento: R$" + maiorFaturamento);
+
+        double somaFaturamento = 0;
+        int numDiasFaturamento = 0;
+        for (double valor : faturamento) {
+            if (valor > 0) {
+                somaFaturamento += valor;
+                numDiasFaturamento++;
+            }
+        }
+        double mediaFaturamento = somaFaturamento / numDiasFaturamento;
+
+        int numDiasSuperiorMedia = 0;
+        for (double valor : faturamento) {
+            if (valor > mediaFaturamento) {
+                numDiasSuperiorMedia++;
+            }
+        }
+        System.out.println("Número de dias com faturamento superior à média mensal: " + numDiasSuperiorMedia);
+    }
+}
