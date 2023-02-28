@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite um número inteiro positivo: ");
+        int num = sc.nextInt();
+
+        int a = 0, b = 1, c = 0;
+        boolean pertence = false;
+
+        System.out.print("Sequência de Fibonacci até " + num + ": ");
+
+        while (c <= num) {
+            System.out.print(c + " ");
+
+            if (c == num) {
+                pertence = true;
+                break;
+            }
+
+            a = b;
+            b = c;
+            c = a + b;
+        }
+
+        if (pertence) {
+            System.out.println("\nO número " + num + " pertence à sequência de Fibonacci.");
+        } else {
+            System.out.println("\nO número " + num + " não pertence à sequência de Fibonacci.");
+        }
+
+        sc.close();
+    }
+}
